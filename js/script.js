@@ -1,0 +1,269 @@
+$(document).ready(function(){
+	$('.mob-start').on('click', function () {
+        if($('.mob-start').hasClass('mob-start--active')){
+            $('.mob-start').removeClass('mob-start--active');
+            $('.menu').removeClass('menu--active');
+        }else{
+            $('.mob-start').addClass('mob-start--active');
+            $('.menu').addClass('menu--active');
+        }                           
+  });
+  $('.vakanc-btn').on('click', function () {
+       var vakancName = $(this).data('vakanc-name');
+       $('.popup_hidden_input').val(vakancName);             
+  });
+  $('.next-video').on('click', function (e) {
+    if($(this).hasClass('blocked')) {
+      e.preventDefault();
+      console.log('test');
+    }else {
+      var video = $('.video-player video')[0];
+      var urlVideo = $(this).data('src');
+      $('.video-player video source').attr('src', urlVideo);
+      video.load();
+      $('.next-video').removeClass('active');
+      $(this).addClass('active');
+    }
+           
+  });
+  $('.quetion-link').on('click', function (e) {
+    $('.quetion-answer').css('display','flex');
+           
+  });
+
+
+
+  $('.test-answer-item input').on('click', function (e) {
+    if($('.test-answer-item input').is(':checked')){
+      var count = 0;
+      count += 1;
+      console.log(count);
+      
+    }
+           
+  });
+  console.log(count);
+
+  $('.modal-video-close').on('click', function (e) {
+    $(this).parent().removeClass('active');
+           
+  });
+  $('.copy-link-btn').click(function() {
+    var link = $(".referal-input").select();
+ 
+    document.execCommand("copy");
+    
+});
+  $('.video-info__play').on('click', function (e) {
+    $('.quetion-answer').css('display','flex');
+    var video = $(this).parent().siblings('video')[0];       
+    $(this).parent().css('display','none');
+    video.load();
+  });
+  $('.show-btn').on('click', function (e) {
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $(this).parent().parent().siblings('.result-item__content').css('display','none');
+    }else {
+      $(this).addClass('active');
+      $('.result-item__content').css('display','none');
+      $(this).parent().parent().siblings('.result-item__content').css('display','block');
+    }
+    
+           
+  });
+
+  $('.menu li span').on('click', function () {
+        if($(this).parent().hasClass('sub-part--active')){
+            $('.menu li').removeClass('sub-part--active');
+            
+        }else{
+             $('.menu li').removeClass('sub-part--active');
+             $(this).parent().addClass('sub-part--active');
+        }                           
+  });
+  $('.phone-mask').inputmask("+7 (999) 999-99-99");
+  //$(".mail").inputmask({ alias: "email"});
+
+  
+  $('.way ').waypoint({
+    handler: function() {
+    $(this.element).addClass("way--active")
+    },
+    offset: '100%'
+  });
+
+  $('.training-slide ').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      pauseOnHover:false,
+      pauseOnFocus:false,
+      focusOnSelect:false,
+      draggable:false,
+      arrows:true,
+      dots:true,
+      prevArrow: $('.galler-sl-arrow--prev'),
+      nextArrow: $('.galler-sl-arrow--next '),
+       responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              dots:false,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+            
+  });
+
+  $('.review-slider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      pauseOnHover:false,
+      pauseOnFocus:false,
+      focusOnSelect:false,
+      draggable:false,
+      arrows:true,
+      dots:true,
+      prevArrow: $('.galler-sl-arrow--prev'),
+      nextArrow: $('.galler-sl-arrow--next '),
+       responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              dots:false,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+            
+  });
+
+  $('.partner-slider').slick({
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      pauseOnHover:false,
+      pauseOnFocus:false,
+      arrows:true,
+      responsive: [
+          {
+            breakpoint: 984,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+  });
+
+
+  //Валидация формы
+  $('.btn-form').on('click', function () {
+       if ( validateForm() ) { // если есть ошибки возвращает true
+      event.preventDefault();
+    }                     
+  });
+
+
+  function validateForm() {
+    $(".text-error").remove();
+    console.log('edsad');
+    // Проверка логина    
+    var el_l    = $("#login");
+    if ( el_l.val().length < 2 ) {
+      var v_login = true;
+      el_l.after('<span class="text-error for-login">Поле Имя обязательно к заполнению</span>');
+      $(".for-login").css({top: el_l.position().top + el_l.outerHeight() + 2});
+    } 
+    $("#login").toggleClass('error', v_login );
+    
+    
+    
+
+ 
+    // Проверка e-mail
+    
+    var reg     = /^\w+([\.-]?\w+)*@(((([a-z0-9]{2,})|([a-z0-9][-][a-z0-9]+))[\.][a-z0-9])|([a-z0-9]+[-]?))+[a-z0-9]+\.([a-z]{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$/i;
+    var el_e    = $("#email");
+    var v_email = el_e.val()?false:true;
+  
+    if ( v_email ) {
+      el_e.after('<span class="text-error for-email">Поле e-mail обязательно к заполнению</span>');
+      $(".for-email").css({top: el_e.position().top + el_e.outerHeight() + 2});
+    } else if ( !reg.test( el_e.val() ) ) {
+      v_email = true;
+      el_e.after('<span class="text-error for-email">Вы указали недопустимый e-mail</span>');
+      $(".for-email").css({top: el_e.position().top + el_e.outerHeight() + 2});
+    }
+    $("#email").toggleClass('error', v_email );
+    
+    
+    var el_p = $("#phone");
+    if ( el_p.val().length < 4 ) {
+      var v_p = true;
+      el_p.after('<span class="text-error for-phone">Поле номер телефона обязательно к заполнению</span>');
+      $(".for-phone").css({top: el_p.position().top + el_p.outerHeight() + 2});
+    } 
+    $("#phone").toggleClass('error', v_p );
+
+
+    var el_m = $("#message_f");
+    if ( el_m.val().length < 4 ) {
+      var v_m = true;
+      el_m.after('<span class="text-error for-message">Поле сообщение обязательно к заполнению</span>');
+      $(".for-message").css({top: el_m.position().top + el_m.outerHeight() + 2});
+    } 
+    $("#message_f").toggleClass('error', v_m );
+
+
+    return ( v_login || v_email  || v_p || v_m );
+  }
+
+
+
+  $(document).click(function(event) { 
+      if(!$(event.target).closest('.message').length) { 
+        if($('.alert').hasClass('alert--active')){
+            $('.alert').removeClass('alert--active');
+        }
+      }  
+  });
+  $('.my-alert__close').click(function(event) {
+      $('.alert').removeClass('alert--active');
+  });   
+
+ 
+});  
