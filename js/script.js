@@ -2,10 +2,19 @@ $(document).ready(function(){
 	$('.mob-start').on('click', function () {
         if($('.mob-start').hasClass('mob-start--active')){
             $('.mob-start').removeClass('mob-start--active');
-            $('.menu').removeClass('menu--active');
+            $('.nav').removeClass('menu--active');
         }else{
             $('.mob-start').addClass('mob-start--active');
-            $('.menu').addClass('menu--active');
+            $('.nav').addClass('menu--active');
+        }                           
+  });
+  $('.asside-start').on('click', function () {
+        if($('.asside-start').hasClass('mob-start--active')){
+            $('.asside-start').removeClass('mob-start--active');
+            $('.asside').removeClass('menu--active');
+        }else{
+            $('.asside-start').addClass('mob-start--active');
+            $('.asside').addClass('menu--active');
         }                           
   });
   $('.vakanc-btn').on('click', function () {
@@ -42,7 +51,7 @@ $(document).ready(function(){
     }
            
   });
-  console.log(count);
+  
 
   $('.modal-video-close').on('click', function (e) {
     $(this).parent().removeClass('active');
@@ -110,9 +119,21 @@ $(document).ready(function(){
       nextArrow: $('.galler-sl-arrow--next '),
        responsive: [
           {
-            breakpoint: 600,
+            breakpoint: 980,
             settings: {
-              dots:false,
+             slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 560,
+            settings: {
+              slidesToShow: 2,
             }
           }
           // You can unslick at a given breakpoint now by adding:
@@ -139,9 +160,21 @@ $(document).ready(function(){
       nextArrow: $('.galler-sl-arrow--next '),
        responsive: [
           {
-            breakpoint: 600,
+            breakpoint: 980,
             settings: {
-              dots:false,
+             slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
             }
           }
           // You can unslick at a given breakpoint now by adding:
