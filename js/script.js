@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('.click').click();
 	$('.mob-start').on('click', function () {
         if($('.mob-start').hasClass('mob-start--active')){
             $('.mob-start').removeClass('mob-start--active');
@@ -7,6 +8,20 @@ $(document).ready(function(){
             $('.mob-start').addClass('mob-start--active');
             $('.nav').addClass('menu--active');
         }                           
+  });
+
+  
+  $('.search-head__mobile').on('click', function () {
+      $('.search-head').addClass('search--active');
+  });
+  $('.bonus-close').on('click', function () {
+      $('.bonus').removeClass('active');
+  });
+  $('.user').on('click', function () {
+      $('.mobile-login').toggle('user--active');
+  });
+  $('.search-head-close ').on('click', function () {
+      $('.search-head').removeClass('search--active');
   });
   $('.asside-start').on('click', function () {
         if($('.asside-start').hasClass('mob-start--active')){
@@ -109,10 +124,6 @@ $(document).ready(function(){
       autoplay:false,
       autoplaySpeed: 2800,
       speed:700,
-      pauseOnHover:false,
-      pauseOnFocus:false,
-      focusOnSelect:false,
-      draggable:false,
       arrows:true,
       dots:true,
       prevArrow: $('.galler-sl-arrow--prev'),
