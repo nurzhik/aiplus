@@ -164,7 +164,7 @@ $(document).ready(function(){
       pauseOnHover:false,
       pauseOnFocus:false,
       focusOnSelect:false,
-      draggable:false,
+      draggable:true,
       arrows:true,
       dots:true,
       prevArrow: $('.galler-sl-arrow--prev'),
