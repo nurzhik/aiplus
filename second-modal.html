@@ -165,10 +165,10 @@
                         <div class="asside-start">                 
                             <span class="menu1"></span>
                             <span class="menu2"></span>
-                            <span class="menu3"></span>    
+                            <span class="menu3"></span>
                             <div class="asside-start-text">
                                 Все предметы
-                            </div>               
+                            </div>                   
                         </div>
                         <div class="paket-top-second">
                             <div class="content-top ">
@@ -179,7 +179,7 @@
                                     <a href="" class="all-link">
                                         Подробнее
                                     </a>
-                                    <a href="#"  data-src="#hidden-content" data-fancybox class="btn btn-buy">
+                                    <a href="#"  data-src="#hidden-content-buy" data-fancybox class="btn btn-buy">
                                         Купить программу
                                     </a>
                                 </div>
@@ -578,28 +578,11 @@
 		<!-- <a  data-fancybox data-src="#hidden-content" href="javascript:;">
 			ЗАКАЗАТЬ ЗВОНОК
 		</a> -->
-		<div style="display: none;" id="hidden-content" class="hidden-content ">
+		<div style="display: none;" id="hidden-content-buy" class="hidden-content ">
 			<div class="popup popup-buy">
                 <span class="popup__heading">Покупка предмета</span>
                 <div class="popup__content">
-                   <div class="popup-top">
-                       <div class="popup-top__item">
-                           <div class="popup-top__title">
-                                Вы покупаете
-                           </div>
-                           <div class="popup-top_name">
-                                Пакет ЕНТ
-                           </div>
-                       </div>
-                        <div class="popup-top__item">
-                            <div class="popup-top__title">
-                                Cтоимость пакета:
-                            </div>
-                            <div class="popup-top_value">
-                                <span> 16 000</span> ₸
-                            </div>
-                        </div>
-                   </div>
+                  
                    <div class="popup-top__title">
                         Способ оплаты:
                     </div>
@@ -629,9 +612,18 @@
                             </div>
                         </div>
                     </div>
-                    <a href="" class="btn small-btn">
-                        Купить предмет
-                    </a>
+                    <div class="popup-top__title">
+                        Введите сумму которую хотите пополнить:
+                    </div>
+                    <div class="popup-bottom">
+                       <form action="" class="buy-form">
+                           <input type="text" class="input" placeholder="Введите сумму.......">
+                           <button class="btn small-btn">
+                                 Купить предмет
+                           </button>
+                       </form>
+                    </div>
+                   
                 </div>
 			</div>
         </div>	

@@ -1428,7 +1428,7 @@ body.kz {
   top: 0;
   bottom: 0;
   width: 0;
-  transition: all 0.7s ease-in-out;
+  transition: width 0.7s ease-in-out;
 }
 .asside-link.active,
 .asside-link:hover {
@@ -1505,6 +1505,9 @@ body.kz {
 .edite-profile__right {
   width: calc(100% - 130px);
 }
+.popup-top {
+  margin-bottom: 20px;
+}
 .select {
   position: relative;
   display: block;
@@ -1526,21 +1529,35 @@ body.kz {
   background-repeat: no-repeat;
   background-position: 14px center;
 }
+.select-heading a {
+  color: #39495C;
+  text-decoration: none;
+}
 .select-block {
   background-color: #fff;
   position: absolute;
-  top: 25px;
+  top: 47px;
   right: 0;
   overflow-y: hidden;
   height: 0;
   z-index: 3;
   text-align: left;
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 0 0 6px 6px;
+  border: 0.5px solid #E5E5E5;
+  display: none;
 }
-.select-type {
+.select-heading.select-filtr {
   margin-bottom: 24px;
 }
-.select-type .select-heading {
+.select-heading.select-filtr.filtr-popular {
   background-image: url(../img/star.png);
+}
+.select.select-lang .select-heading {
+  padding: 16px 50px 16px 18px;
+  background-image: url(../img/arrow-svg.svg);
+  background-position: right 19px center;
 }
 .select-list li a {
   color: #fff;
@@ -1549,15 +1566,19 @@ body.kz {
   display: block;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #4f4f4f;
+  border-bottom: 0.5px solid #E5E5E5;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
-  /* Text color */
   color: #2A2A2A;
+}
+.select-list li a:hover {
+  background-color: #ED874E;
+  color: #fff;
 }
 .select--active .select-block {
   height: auto;
+  display: block;
 }
 .breadcrumbs {
   font-size: 0;
@@ -1630,7 +1651,7 @@ body.kz {
   padding: 12px 20px;
   border: 1px solid #E5E5E5;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 .all-link:hover {
   background-color: #ED874E;
@@ -2366,7 +2387,20 @@ body.kz {
   text-decoration-line: underline;
   color: #39495C;
   display: inline-block;
-  margin-right: 70px;
+  margin-right: 40px;
+}
+.input {
+  height: 40px;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-indent: 15px;
+  width: 340px;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+.buy-form {
+  display: flex;
 }
 .popup-top__title {
   font-weight: 600;
@@ -3203,6 +3237,13 @@ body.kz {
   }
 }
 @media (max-width: 1000px) {
+  .content-top {
+    flex-wrap: wrap;
+  }
+  .content-title {
+    margin-bottom: 15px;
+    width: 100%;
+  }
   .referal-content-page {
     flex-wrap: wrap;
   }
@@ -3415,6 +3456,9 @@ body.kz {
   }
 }
 @media (max-width: 800px) {
+  .cabinet-top .content-top {
+    margin-bottom: 0;
+  }
   .content-top-right {
     width: 100%;
     display: flex;
@@ -3561,6 +3605,20 @@ body.kz {
   }
 }
 @media (max-width: 640px) {
+  .asside-cabinet-block,
+  .asside-start.asside-cabinet-block {
+    display: none;
+  }
+  .video-tab-top {
+    flex-wrap: wrap;
+  }
+  .video-tab-top .video-tab-text {
+    order: 1;
+  }
+  .video-tab-top .asside-test {
+    order: 0;
+    margin-bottom: 30px;
+  }
   .test-item {
     padding-top: 50px;
   }
@@ -3591,14 +3649,21 @@ body.kz {
     line-height: 1.4;
   }
   .asside-start {
-    width: 30px;
     height: 22px;
     right: 0;
     cursor: pointer;
     order: 0;
     position: relative;
-    display: block;
+    display: flex;
     margin-top: 29px;
+    padding-left: 45px;
+    background-image: url(../img/book_menu.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    align-items: center;
+  }
+  .asside-start span {
+    display: none;
   }
   .registration-item {
     width: 100%;
@@ -3672,7 +3737,7 @@ body.kz {
   }
   .asside-start {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .content-page {
     padding-top: 50px;
@@ -3683,11 +3748,11 @@ body.kz {
   .asside.menu--active {
     display: block;
     max-height: 1200px;
-    transition: all 0.7s ease-in-out;
+    transition: max-height 0.7s ease-in-out;
     visibility: visible;
   }
   .asside {
-    margin-top: 45px;
+    margin-top: 80px;
     max-height: 0;
     width: 100%;
     background: #fff;
@@ -3711,14 +3776,28 @@ body.kz {
   .index-video {
     padding-top: 45px;
   }
-}
-@media (max-width: 540px) {
-  .content-top-right {
+  .input {
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 0;
+  }
+  .buy-form {
     flex-wrap: wrap;
   }
+}
+@media (max-width: 540px) {
+  .btn-buy {
+    width: 100%;
+    text-align: left;
+  }
   .content-top-right .all-link {
-    margin-right: 20px;
+    margin-right: 0;
+    display: block;
+    width: 100%;
     margin-bottom: 20px;
+  }
+  .content-top-right {
+    flex-wrap: wrap;
   }
   .about-item__text {
     padding: 20px;
@@ -3960,5 +4039,11 @@ body.kz {
   .info-popup {
     width: 250px;
     padding: 50px 40px 20px;
+  }
+  .tab-traning__head li {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    margin-right: 0;
   }
 }
