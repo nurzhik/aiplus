@@ -1964,10 +1964,10 @@ body.kz {
     font-weight: bold;
     font-size: 24px;
     line-height: 1.4;
-    text-decoration-line: underline;
     color: #39495C;
     display: inline-block;
     margin-right: 40px;
+    vertical-align: top;
 }
 .input {
     height: 40px;
@@ -1990,7 +1990,7 @@ body.kz {
   display: flex;
   align-items: center;
   color: #656669;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 .hidden-content.fancybox-content {
   padding: 0;
@@ -2004,10 +2004,10 @@ body.kz {
   color: #464646;
   margin-bottom: 14px;
 }
-.popup-middle__item {
+/*.popup-middle__item {
   margin-right: 48px;
 }
-
+*/
 .popup-middle__item-type {
   background: #FFFFFF;
   box-shadow: 0px 4px 40px rgba(228, 225, 225, 0.25);
@@ -2021,7 +2021,6 @@ body.kz {
 .popup-middle {
   display: flex;
   margin-top: 32px;
-  margin-bottom: 45px;
 }
 .popup-acces-content__title {
   font-weight: 900;
@@ -2257,9 +2256,38 @@ body.kz {
       outline: none;
   }
 }
+.page-error-number {
+    font-weight: bold;
+    font-size: 140px;
+    line-height: 1;
+    color: #ED874E;
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 70px;
+    span {
+      color:#39495C;
+    }
+}
+.page-error-middle {
+    text-align: center;
+}
+.video-page.page-error {
+    background-image: none;
+}
+.page-error__text {
+    font-size: 24px;
+    line-height: 1.4;
+    /* display: flex; */
+    /* align-items: center; */
+    color: #39495C;
+    text-align: center;
+    margin-bottom: 50px;
+}
 .footer {
-  background: #141A21;
-  padding: 14px 0;
+    background: #141A21;
+    padding: 14px 0;
+    position: relative;
+    z-index: 2;
   .container {
       display: flex;
       justify-content: space-between;
@@ -2563,6 +2591,116 @@ body.kz {
           margin-left: 8px;
         }
     }
+}
+.checkcontainer {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 40px;
+    display: inline-block;
+    padding: 0 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #39495C;
+    line-height: 40px;
+    z-index: 1;
+    overflow: hidden;
+    margin-right: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 132px;
+}
+.radioselect input:checked ~ .checkmarradioselect  {
+   border: 2px solid #ED874E;
+}
+.radioselect {
+    width: 140px;
+    display: inline-flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 32px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+.radioselect input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmarkradio {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #fff;
+    z-index: -1;
+}
+.checkmarradioselect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 40px rgba(228, 225, 225, 0.25);
+    border-radius: 6px;
+    font-weight: 600;
+      font-size: 24px;
+      line-height: 16px;
+      color: #39495C;
+      span {
+        font-size: 16px;
+        font-weight: normal;
+      }
+}
+/* Hide the browser's default checkbox */
+.checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkcontainer:hover input ~ .checkmarkradio {
+  background-color: #ED874E;
+  color:#fff;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkcontainer input:checked::parent{
+  color:#fff;
+}
+
+.popup-top_name {
+    font-size: 0;
+}
+.checkcontainer input:checked ~ .checkmarkradio {
+    background-color: #ED874E;
+    color:#fff;
 }
 @media (max-width: 1440px) {
   .index-text-block__img img{
@@ -3310,13 +3448,12 @@ body.kz {
   }
   .popup-middle {
       margin-top: 22px;
-      margin-bottom: 25px;
       flex-wrap: wrap;
   }
-  .popup-middle__item {
+ /* .popup-middle__item {
       margin-right: 25px;
       margin-bottom: 20px;
-  }
+  }*/
   .content-test {
       width: 100%;
       padding-right: 0;
@@ -3633,7 +3770,14 @@ body.kz {
   .video-block-prepod .review-img {
       display: none;
   }
-  
+  .page-error-number {
+      font-size: 100px;
+      margin-bottom: 30px;
+      padding-top: 40px;
+  }
+  .page-error__text {
+      font-size: 18px;
+  }
 }
 @media (max-width:500px) {
   

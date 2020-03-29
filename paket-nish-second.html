@@ -580,15 +580,22 @@
 		</a> -->
 		<div style="display: none;" id="hidden-content" class="hidden-content ">
 			<div class="popup popup-buy">
-                <span class="popup__heading">Покупка предмета</span>
+                <span class="popup__heading">Вы покупаете подписку на программу ЕНТ</span>
                 <div class="popup__content">
                    <div class="popup-top">
                        <div class="popup-top__item">
                            <div class="popup-top__title">
-                                Вы покупаете
+                                Выберите способ приобретение
                            </div>
                            <div class="popup-top_name">
-                                Пакет ЕНТ
+                                <label class="checkcontainer">
+                                  <input type="radio" name="radio">
+                                  <span class="checkmarkradio">ПОДПИСКА</span>
+                                </label>
+                                <label class="checkcontainer">
+                                  <input type="radio" name="radio">
+                                  <span class="checkmarkradio">пОКУПКА</span>
+                                </label>
                            </div>
                        </div>
                         <div class="popup-top__item">
@@ -599,8 +606,30 @@
                                 <span> 16 000</span> ₸
                             </div>
                         </div>
-                   </div>
-                   <div class="popup-top__title">
+                    </div>
+
+                    <div class="popup-top__title">
+                        Выберите срок подписки:
+                    </div>
+                    <div class="popup-middle">
+                        <label class="radioselect">
+                          <input type="radio" name="time">
+                          <span class="checkmarradioselect"><div>1 <span>месяц </span></div></span>
+                        </label>
+                        <label class="radioselect">
+                          <input type="radio" name="time">
+                          <span class="checkmarradioselect"><div>2 <span>месяц </span></div></span>
+                        </label>
+                        <label class="radioselect">
+                          <input type="radio" name="time">
+                          <span class="checkmarradioselect"><div>3 <span>месяц </span></div></span>
+                        </label>
+                        <label class="radioselect">
+                          <input type="radio" name="time">
+                          <span class="checkmarradioselect"><div><span>Безлемит </span></div></span>
+                        </label>
+                    </div>
+                    <div class="popup-top__title">
                         Способ оплаты:
                     </div>
                     <div class="popup-middle">
@@ -608,25 +637,30 @@
                             <div class="popup-middle__item-title">
                                 Qiwi
                             </div>
-                            <div class="popup-middle__item-type">
-                                <img src="img/qiwi.svg" alt="">
-                            </div>
+                            <label class="radioselect">
+                              <input type="radio" name="oplata">
+                              <span class="checkmarradioselect"><div><img src="img/qiwi.svg" alt=""></div></span>
+                            </label>
+                            
                         </div>
                         <div class="popup-middle__item">
                             <div class="popup-middle__item-title">
                                 Банковской картой
                             </div>
-                            <div class="popup-middle__item-type">
-                                <img src="img/card.svg" alt="">
-                            </div>
+                            <label class="radioselect">
+                              <input type="radio" name="oplata">
+                              <span class="checkmarradioselect"><div><img src="img/card.svg" alt=""></div></span>
+                            </label>
+                           
                         </div>
                         <div class="popup-middle__item">
                             <div class="popup-middle__item-title">
                                 Бонусами
                             </div>
-                            <div class="popup-middle__item-type">
-                                <img src="img/bonus.svg" alt="">
-                            </div>
+                            <label class="radioselect">
+                              <input type="radio" name="oplata">
+                              <span class="checkmarradioselect"><div> <img src="img/bonus.svg" alt=""></div></span>
+                            </label>
                         </div>
                     </div>
                     <a href="" class="btn small-btn">
