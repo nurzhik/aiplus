@@ -18,7 +18,17 @@ $(document).ready(function(){
           $(this).addClass('select--active');
       }
   });
- // $('.search-head').appendTo('.nav');
+  if ($(window).width() < 800) {
+      $('.search-head').appendTo('.nav');
+  }
+
+  $(window).resize(function() {
+    console.log('test');
+    if ($(window).width() < 800) {
+      $('.search-head').appendTo('.nav');
+    }
+   
+  });
   $('.select-list li').on('click', function() {
       var nameSelectItem = $(this).html();
       $(this).closest('.select-block').siblings('.select-heading').html(nameSelectItem);
