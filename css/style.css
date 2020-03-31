@@ -1247,6 +1247,10 @@ body.kz {
 }
 .video-info {
   padding-left: 40px;
+  display: none;
+}
+.next-video.active .video-info {
+  display: block;
 }
 .video-info-list li {
   font-size: 12px;
