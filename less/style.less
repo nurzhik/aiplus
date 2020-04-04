@@ -2263,6 +2263,17 @@ body.kz {
 .registration-head__item.gray-color .registration-title,.registration-head__item.gray-color .registration-text {
   color: #D5D5D5;
 }
+.registration-item .select-heading {
+    border-radius: 10px;
+    padding: 17px 40px;
+}
+.fancybox-slide--video .fancybox-content {
+    width  : 533px;
+    height : 300px;
+    max-width  : 80%;
+    max-height : 80%;
+  margin: 0;
+}
 .registration-item {
   width: 48%;
   margin-bottom: 25px;
@@ -2752,15 +2763,11 @@ body.kz {
     &__video {
         width: 37%;
         position: relative;
-        iframe {
-          position: absolute;
-          background: #000;
-          border: none;
-          top: 0; right: 0;
-          bottom: 0; left: 0;
-          width: 100%;
-          height: 100%;
-        }
+       img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
     }
     &_bottom {
         display: flex;
@@ -2795,6 +2802,53 @@ body.kz {
         color: #4F4F4F;
         margin-bottom: 20px;
     }
+}
+
+.video-play {
+    position: absolute;
+    color: #fff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover  .video-play__content svg path{
+      fill:#ED874E;
+    }
+    &:hover  .video-play__ttitle{
+      color:#ED874E;
+    }
+    &:after {
+      content:'';
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url(.jpg);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top:0;
+      bottom: 0;
+    }
+}
+.video-play__content {
+    max-width: 60%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    svg {
+      margin-bottom: 10px;
+  }
+}
+.video-play__ttitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
 }
 .paket-block {
     display: flex;

@@ -43,6 +43,9 @@ $(document).ready(function(){
         }
       }  
   });
+  $('[data-fancybox]').fancybox({
+    loop : true
+  });
   $('.search-head__mobile').on('click', function () {
       $('.search-head').addClass('search--active');
   });
