@@ -11,11 +11,11 @@ $(document).ready(function(){
         }                           
   });
 
-  $('.select').on('click', function() {
-      if ($(this).hasClass('select--active')) {
-          $(this).removeClass('select--active');
+  $('.select-heading').on('click', function() {
+      if ($(this).parent().hasClass('select--active')) {
+          $(this).parent().removeClass('select--active');
       } else {
-          $(this).addClass('select--active');
+          $(this).parent().addClass('select--active');
       }
   });
   if ($(window).width() < 800) {
@@ -32,7 +32,10 @@ $(document).ready(function(){
   $('.select-list li').on('click', function() {
       var nameSelectItem = $(this).html();
       $(this).closest('.select-block').siblings('.select-heading').html(nameSelectItem);
-  });
+      $('.select').removeClass('select--active');
+       $('.searchInput').val(""); 
+        $('.select-list li a ').css('display','block');
+   });
   $(document).click(function(event) { 
       if(!$(event.target).closest('.select').length) { 
         if($('.select').hasClass('select--active')){
@@ -65,16 +68,20 @@ $(document).ready(function(){
        var vakancName = $(this).data('vakanc-name');
        $('.popup_hidden_input').val(vakancName);             
   });
+  $('.video-group').on('click', function () {
+       $('.video-group').removeClass('active');
+       $(this).addClass('active');    
+  });
   $('.next-video').on('click', function (e) {
-    if($(this).hasClass('blocked')) {
-      e.preventDefault();
-      console.log('test');
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
     }else {
       var video = $('.video-player video')[0];
       var urlVideo = $(this).data('src');
-      $('.video-player video source').attr('src', urlVideo);
-      video.load();
+      $('.video-player iframe').attr('src', urlVideo);
       $('.next-video').removeClass('active');
+      $(this).prev().addClass('show');
+      $(this).removeClass('show');
       $(this).addClass('active');
     }
            
@@ -182,6 +189,59 @@ $(document).ready(function(){
         ]     
             
   });
+  $('.predmet-slider').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      arrows:true,
+      dots:true,
+      focusOnSelect:true,
+      prevArrow: $('.slider-index-arrow--prev'),
+      nextArrow: $('.slider-index-arrow--next'),
+       responsive: [
+          {
+            breakpoint: 980,
+            settings: {
+             slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 460,
+            settings: {
+              slidesToShow: 1,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+            
+  });
+  $('#searchInput').bind('keyup', function() {
+
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("select-list");
+    a = $('.select-list li a');
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  });
 
   $('.review-slider').slick({
     infinite: true,
@@ -194,7 +254,7 @@ $(document).ready(function(){
       pauseOnFocus:false,
       focusOnSelect:false,
       draggable:true,
-      arrows:true,
+      arrows:false,
       dots:true,
       prevArrow: $('.galler-sl-arrow--prev'),
       nextArrow: $('.galler-sl-arrow--next '),
@@ -223,7 +283,44 @@ $(document).ready(function(){
         ]     
             
   });
-
+  $('.review-lesson-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      pauseOnHover:false,
+      pauseOnFocus:false,
+      focusOnSelect:false,
+      draggable:true,
+      arrows:false,
+      dots:true,
+       responsive: [
+          {
+            breakpoint: 980,
+            settings: {
+             slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+            
+  });
   $('.partner-slider').slick({
     infinite: true,
     slidesToShow: 6,

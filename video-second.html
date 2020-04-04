@@ -154,11 +154,7 @@
 							<div class="video-block-player">
 								<div class="video-column">
 									<div class="video-player">
-										<video  controls>
-											<source src="https://webdevtrick.com/wp-content/uploads/horizontal-scrolling-menu-bar.mp4" type="video/mp4">
-											<source src="movie.ogg" type="video/ogg">
-											Your browser does not support the video tag.
-										</video>
+										<iframe src="https://player.vimeo.com/video/164438721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 										<div class="modal-video">
 											<div class="modal-video-close">
 												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,65 +194,70 @@
 								</div>
 								<div id="playlist" class="playlist">
 									<header class="next">Содержание:</header>
-									<div data-src="https://webdevtrick.com/wp-content/uploads/clip-path-animation-hover.mp4" class="active next-video">
+									<div  class="active video-group">
 										<div class="next-video-title">
 											1. 1-тарау. Квадрат түбір және иррационал өрнек
 										</div>
 										<div class="video-info">
 											<ul class="video-info-list">
-												<li>
+												<li class="next-video" data-src="https://player.vimeo.com/video/164438721" >
 													1. Иррационал және нақты сан
 												</li>
-												<li>
+												<li class="next-video" data-src="https://player.vimeo.com/video/164438721" >
 													4. Арифметикалық квадрат түбір қасиеттері
 												</li>
-												<li>
+												<li class="next-video" data-src="https://player.vimeo.com/video/164438721" >
 													1. Иррационал және нақты сан
-												</li>
-												<li>
+												</li class="next-video" data-src="https://player.vimeo.com/video/164438721" >
+												<li class="next-video">
 													4. Арифметикалық квадрат түбір қасиеттері
 												</li>
 											</ul>
 										</div>
 									</div>
 							
-									<div data-src="https://webdevtrick.com/wp-content/uploads/animated-bar-graphs-javascript.mp4" class="next-video ">
+									<div  class="video-group ">
 										<div class="next-video-title">
 											2-тарау. Квадрат түбір және иррационал өрнек
 										</div>
 										<div class="video-info">
 											<ul class="video-info-list">
-												<li>
+												<li class="next-video">
 													2.1 Иррационал және нақты сан
 												</li>
-												<li>
+												<li class="next-video">
 													2.2 Арифметикалық квадрат түбір қасиеттері
 												</li>
-												<li>
+												<li class="next-video">
 													2.3 Иррационал және нақты сан
 												</li>
-												<li>
+												<li class="next-video">
 													2.5 Арифметикалық квадрат түбір қасиеттері
 												</li>
 											</ul>
 										</div>
 									</div>
-							
-									<a data-src="https://webdevtrick.com/wp-content/uploads/clip-path-animation-hover.mp4" class="next-video blocked">
+									<div  class="video-group ">
 										<div class="next-video-title">
 											3-тарау. Квадрат түбір және иррационал өрнек
 										</div>
-									</a>
-									<a data-src="https://webdevtrick.com/wp-content/uploads/clip-path-animation-hover.mp4" class="next-video blocked">
-										<div class="next-video-title">
-											4-тарау. Квадрат түбір және иррационал өрнек
+										<div class="video-info">
+											<ul class="video-info-list">
+												<li class="next-video">
+													2.1 Иррационал және нақты сан
+												</li>
+												<li class="next-video">
+													2.2 Арифметикалық квадрат түбір қасиеттері
+												</li>
+												<li class="next-video">
+													2.3 Иррационал және нақты сан
+												</li>
+												<li class="next-video">
+													2.5 Арифметикалық квадрат түбір қасиеттері
+												</li>
+											</ul>
 										</div>
-									</a>
-									<a data-src="#" class="next-video blocked">
-										<div class="next-video-title">
-											5-тарау. Квадрат түбір және иррационал өрнек
-										</div>
-									</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -703,6 +704,7 @@
 			</div>
 		</div>	
 		<script src="js/jquery-3.0.0.min.js"></script>	
+		<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 		<script src="js/slick.min.js"></script>
 		<script src="js/jquery.waypoints.min.js"></script>
 		<script src="js/jquery.inputmask.bundle.js"></script>	
