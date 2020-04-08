@@ -229,13 +229,14 @@ $(document).ready(function(){
         ]     
             
   });
-  $('#searchInput').bind('keyup', function() {
+  $('.searchInput').bind('keyup', function() {
 
     var input, filter, ul, li, a, i;
-    input = document.getElementById("searchInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("select-list");
-    a = $('.select-list li a');
+    input = $(this);
+    filter =$(this).val().toUpperCase();
+    console.log(filter);
+    a = $(this).siblings('.select-list').find('a');
+    console.log(a);
     for (i = 0; i < a.length; i++) {
       txtValue = a[i].textContent || a[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
