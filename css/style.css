@@ -1110,7 +1110,10 @@ body.kz {
   background-image: url(../img/pdf.svg);
   background-repeat: no-repeat;
   background-position: 22px 15px;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .doc-item:hover {
   background-color: #FFCE55;
@@ -1150,10 +1153,13 @@ body.kz {
   margin-right: -24px;
   width: 90%;
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .doc-list li {
   width: 33.33%;
   display: inline-block;
+  margin-bottom: 24px;
 }
 .video-tab {
   margin-bottom: 50px;
@@ -1690,6 +1696,7 @@ body.kz {
   border: 1px solid #E5E5E5;
   box-sizing: border-box;
   border-radius: 6px;
+  cursor: pointer;
 }
 .all-link:hover {
   background-color: #ED874E;
@@ -2110,6 +2117,22 @@ body.kz {
 }
 .player {
   position: relative;
+}
+.player iframe {
+  width: 100%!important;
+  height: 480px;
+}
+.show-video.active {
+  background-color: #ED874E;
+  color: #fff;
+}
+.result-item__video {
+  display: none;
+  width: 100%;
+  margin-bottom: 16px;
+}
+.result-item__video.active {
+  display: block;
 }
 .video-info-content {
   position: absolute;
@@ -3446,6 +3469,7 @@ body.kz {
   overflow: hidden;
   background: #e5e5e5;
   border-radius: 6px;
+  position: relative;
 }
 .bar {
   position: relative;
@@ -3529,6 +3553,7 @@ body.kz {
 .result-test-block__row {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .result-test-block__right {
   width: 32%;
@@ -3542,9 +3567,23 @@ body.kz {
   padding: 12px 10px 10px;
 }
 .result-test-block__right .btn.small-btn {
+  text-align: center;
   font-size: 12px;
   line-height: 16px;
   padding: 12px 15px 10px;
+  width: 120px;
+}
+.result-item__top > div:first-child {
+  width: 34%;
+}
+.result-item__top > div:nth-child(2) {
+  width: 23%;
+}
+.result-item__top > div:nth-child(3) {
+  width: 10%;
+}
+.result-item__top > div:nth-child(4) {
+  width: 20%;
 }
 @media (max-width: 1440px) {
   .index-text-block__img img {
@@ -3925,6 +3964,13 @@ body.kz {
   }
 }
 @media (max-width: 900px) {
+  .result-item__colum-title {
+    line-height: 1.4;
+  }
+  .result-item__top > div {
+    width: auto!important;
+    max-width: 45%;
+  }
   .big-logo img {
     max-width: 40%;
   }
@@ -4439,6 +4485,10 @@ body.kz {
   }
 }
 @media (max-width: 540px) {
+  .result-item__top > div {
+    width: 100%!important;
+    max-width: none;
+  }
   .result-test-table__row > div:first-child {
     width: 100%;
     margin-bottom: 7px;
