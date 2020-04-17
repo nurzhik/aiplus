@@ -2117,10 +2117,18 @@ body.kz {
 }
 .player {
   position: relative;
+  height: 480px;
 }
 .player iframe {
-  width: 100%!important;
-  height: 480px;
+  position: absolute;
+  background: #000;
+  border: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .show-video.active {
   background-color: #ED874E;
@@ -3964,6 +3972,9 @@ body.kz {
   }
 }
 @media (max-width: 900px) {
+  .player {
+    height: 350px;
+  }
   .result-item__colum-title {
     line-height: 1.4;
   }
@@ -4106,6 +4117,9 @@ body.kz {
   }
 }
 @media (max-width: 800px) {
+  .player {
+    height: 300px;
+  }
   .paket-block {
     flex-wrap: wrap;
   }
@@ -4485,6 +4499,17 @@ body.kz {
   }
 }
 @media (max-width: 540px) {
+  .result-test-block__right .btn.small-btn {
+    width: 48%;
+    height: auto;
+  }
+  .result-test-block__right .all-link {
+    width: 48%;
+  }
+  .result-test-block__right {
+    text-align: center;
+    width: 100%;
+  }
   .result-item__top > div {
     width: 100%!important;
     max-width: none;
@@ -4509,6 +4534,7 @@ body.kz {
   }
   .result-test-table__row {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .btn-buy {
     text-align: left;
@@ -4747,6 +4773,17 @@ body.kz {
   }
 }
 @media (max-width: 500px) {
+  .result-test-table__row > div:nth-child(2) {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .result-test-table__row > div:nth-child(3) {
+    width: auto;
+    padding-left: 0;
+  }
+  .player {
+    height: 280px;
+  }
   .tab-traning__item-top {
     flex-wrap: wrap;
   }
@@ -4756,6 +4793,19 @@ body.kz {
   }
 }
 @media (max-width: 400px) {
+  .result-test-block__right .btn.small-btn {
+    width: 100%;
+    height: auto;
+  }
+  .result-test-block__right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .result-test-block__right .all-link {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
   .select.select-lang {
     margin-bottom: 20px;
   }
