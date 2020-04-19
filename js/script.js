@@ -11,10 +11,16 @@ $(document).ready(function(){
         }                           
   });
   $('.show-video').on('click', function () {
-    $('.result-item__video').removeClass('active');
-     $('.show-video').removeClass('active');
+    if($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $(this).parent().siblings('.result-item__video').removeClass('active');
+    }else {
+      $('.result-item__video').removeClass('active');
+      $('.show-video').removeClass('active');
       $(this).addClass('active');
-    $(this).parent().siblings('.result-item__video').addClass('active');
+      $(this).parent().siblings('.result-item__video').addClass('active');
+    }
+    
   });
 
   $('.select-heading').on('click', function() {
