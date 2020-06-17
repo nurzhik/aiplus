@@ -10,18 +10,6 @@ $(document).ready(function(){
             $('.nav').addClass('menu--active');
         }                           
   });
-  $('.show-video').on('click', function () {
-    if($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(this).parent().siblings('.result-item__video').removeClass('active');
-    }else {
-      $('.result-item__video').removeClass('active');
-      $('.show-video').removeClass('active');
-      $(this).addClass('active');
-      $(this).parent().siblings('.result-item__video').addClass('active');
-    }
-    
-  });
 
   $('.select-heading').on('click', function() {
       if ($(this).parent().hasClass('select--active')) {
@@ -176,9 +164,45 @@ $(document).ready(function(){
       autoplaySpeed: 2800,
       speed:700,
       arrows:true,
-      dots:true,
-      prevArrow: $('.galler-sl-arrow--prev'),
-      nextArrow: $('.galler-sl-arrow--next '),
+      dots:false,
+      prevArrow: $('.slider-index-arrow--prev'),
+      nextArrow: $('.slider-index-arrow--next'),
+       responsive: [
+          {
+            breakpoint: 980,
+            settings: {
+             slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 560,
+            settings: {
+              slidesToShow: 2,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]     
+            
+  });
+  $('.training-slide-predmet').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+      autoplay:false,
+      autoplaySpeed: 2800,
+      speed:700,
+      arrows:true,
+      dots:false,
+      prevArrow: $('.slider-index-arrow--predmet'),
+      nextArrow: $('.slider-index-arrow--predmet'),
        responsive: [
           {
             breakpoint: 980,
@@ -241,14 +265,13 @@ $(document).ready(function(){
         ]     
             
   });
-  $('.searchInput').bind('keyup', function() {
+  $('#searchInput').bind('keyup', function() {
 
     var input, filter, ul, li, a, i;
-    input = $(this);
-    filter =$(this).val().toUpperCase();
-    console.log(filter);
-    a = $(this).siblings('.select-list').find('a');
-    console.log(a);
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("select-list");
+    a = $('.select-list li a');
     for (i = 0; i < a.length; i++) {
       txtValue = a[i].textContent || a[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -270,10 +293,10 @@ $(document).ready(function(){
       pauseOnFocus:false,
       focusOnSelect:false,
       draggable:true,
-      arrows:false,
-      dots:true,
-      prevArrow: $('.galler-sl-arrow--prev'),
-      nextArrow: $('.galler-sl-arrow--next '),
+      arrows:true,
+      dots:false,
+      prevArrow: $('.slider-index-arrow--prev-review'),
+      nextArrow: $('.slider-index-arrow--next-review'),
        responsive: [
           {
             breakpoint: 980,
